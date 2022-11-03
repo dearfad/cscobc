@@ -1,7 +1,7 @@
 import streamlit as st
 import graphviz
 
-graph = graphviz.Digraph()
+# graph = graphviz.Digraph()
 
 col1, col2 = st.columns([1, 3])
 
@@ -17,10 +17,18 @@ with col1:
 with col2:
     if surgery == '未手术':
         if size=='大' or lymphnode == '转移' or her2 == '阳性' or (er=='阴性' and pr=='阴性' and her2=='阴性') or conserve=='是':
-            graph.edge('评估', '新辅助化疗')
+            node1 = '新辅助化疗'
         else:
-            graph.edge('评估', '手术')
+            node1 = '手术'
     if surgery == '手术':
-        graph.edge('评估','辅助治疗')
+        node1 = '辅助治疗'
+    
+    node = f'评估 -> {node1}'
+    
+    graph = f'''
+        digraph {
+            {node}
+        }
+    '''
 
     st.graphviz_chart(graph)
