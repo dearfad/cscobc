@@ -5,7 +5,7 @@ graph = graphviz.Digraph()
 
 surgery = st.radio("手术", ('已手术', '未手术'))
 er = st.radio('ER',('阳性','阴性'))
-pr = st.radio('ER',('阳性','阴性'))
+pr = st.radio('PR',('阳性','阴性'))
 size = st.radio('大小',('大','小'))
 lymphnode = st.radio('淋巴结',('转移','未转移'))
 her2 = st.radio('HER-2',('阳性','阴性'))
