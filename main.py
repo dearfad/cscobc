@@ -1,10 +1,15 @@
 import streamlit as st
 import graphviz
 
-# Create a graphlib graph object
 graph = graphviz.Digraph()
-graph.edge('评估', '新辅助化疗')
-graph.edge('评估', '手术')
+
+surgery = st.radio("是否手术", ('已手术', '未手术'))
+
+if surgery == '已手术':
+    graph.edge('评估', '新辅助化疗')
+
+if surgery == '未手术':
+    graph.edge('评估', '手术')
 
 
 st.graphviz_chart(graph)
