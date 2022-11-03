@@ -22,9 +22,9 @@ with col2:
             node1 = '手术'
     if surgery == '手术':
         node1 = '辅助治疗'
-    
+    st.write(node1)
     node = f'评估 -> {node1}'
-    
+
     graph = f'''
         digraph {
             {node}
