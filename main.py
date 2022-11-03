@@ -3,7 +3,7 @@ import graphviz
 
 graph = graphviz.Digraph()
 
-col1, col2 = st.columns([3, 1])
+col1, col2 = st.columns([1, 3])
 
 with col1:
     surgery = st.radio("手术", ('已手术', '未手术'))
@@ -20,4 +20,4 @@ with col2:
     else:
         graph.edge('评估', '手术')
 
-st.graphviz_chart(graph)
+    st.graphviz_chart(graph)
