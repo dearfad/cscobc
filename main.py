@@ -15,6 +15,7 @@ with col1:
     conserve = st.radio('保乳',('是','否','未知'))
 
 with col2:
+    node1 = ''
     if surgery == '未手术':
         if size=='大' or lymphnode == '转移' or her2 == '阳性' or (er=='阴性' and pr=='阴性' and her2=='阴性') or conserve=='是':
             node1 = '新辅助化疗'
