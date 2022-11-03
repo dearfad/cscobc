@@ -26,10 +26,6 @@ with col2:
     st.write(node1)
     node = f'评估 -> {node1}'
 
-    graph = f'''
-        digraph {
-            {node}
-        }
-    '''
+    graph = f'digraph {{node}}'
 
     st.graphviz_chart(graph)
