@@ -23,9 +23,19 @@ with col2:
             node1 = '手术'
     if surgery == '已手术':
         node1 = '辅助治疗'
-    st.write(node1)
-    node = f'评估 -> {node1}'
 
-    graph = f'digraph {{node}}'
+    node = f'评估 -> {node1}'
+    st.write(node)
+
+    pre = '''
+        digraph {
+    '''
+    content = node
+
+    end = '''
+        }
+    '''
+
+    graph = pre + content + end
 
     st.graphviz_chart(graph)
